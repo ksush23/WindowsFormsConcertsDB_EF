@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsConcertsEF", "WindowsFormsConcertsEF\WindowsFormsConcertsEF.csproj", "{527CBA72-D326-4C15-AF55-B9D1A3478221}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertsDataBase", "ConcertsDataBase\ConcertsDataBase.csproj", "{F64D7D1E-9163-4762-8A69-F236C26528DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{527CBA72-D326-4C15-AF55-B9D1A3478221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{527CBA72-D326-4C15-AF55-B9D1A3478221}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{527CBA72-D326-4C15-AF55-B9D1A3478221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

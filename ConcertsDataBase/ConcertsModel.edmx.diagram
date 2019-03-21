@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d4425c386f347a1884b166e57f8ea7d" Name="Diagram1">
+        <EntityTypeShape EntityType="ConcertsModel.Artists" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Concerts" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Places" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Seats" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Sectors" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Ticket_States" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConcertsModel.Tickets" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="ConcertsModel.FK_Concert_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Concerts_Places" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Ticket_Concert" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Sector_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Seat_Sector1" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Ticket_Seat" ManuallyRouted="false" />
+        <AssociationConnector Association="ConcertsModel.FK_Tickets_Ticket_States" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
