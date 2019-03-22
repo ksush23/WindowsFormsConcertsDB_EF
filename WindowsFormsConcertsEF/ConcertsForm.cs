@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using ConcertsDataBase;
 
 namespace WindowsFormsConcertsEF
 {
@@ -15,6 +17,13 @@ namespace WindowsFormsConcertsEF
         public ConcertsForm()
         {
             InitializeComponent();
+
+            var ctx = new ConcertsDataBase.ConcertsEntities();
+        }
+
+        private void dataGridViewSeats_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
