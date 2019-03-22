@@ -81,6 +81,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\ConcertsDataBase.Artists.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Concerts.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Places.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Seats.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Sectors.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Tickets.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Ticket_States.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
