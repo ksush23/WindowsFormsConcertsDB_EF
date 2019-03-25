@@ -39,15 +39,12 @@
             this.textBoxPlace = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ticketIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ticketPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketStateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketConcertIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketSeatIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.concertsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketStatesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
@@ -58,15 +55,12 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ticketIDDataGridViewTextBoxColumn,
-            this.Column2,
+            this.Column1,
+            this.ticketPriceDataGridViewTextBoxColumn,
             this.ticketStateIDDataGridViewTextBoxColumn,
             this.ticketConcertIDDataGridViewTextBoxColumn,
             this.ticketSeatIDDataGridViewTextBoxColumn,
-            this.ticketPriceDataGridViewTextBoxColumn,
-            this.concertsDataGridViewTextBoxColumn,
-            this.seatsDataGridViewTextBoxColumn,
-            this.ticketStatesDataGridViewTextBoxColumn});
+            this.ticketIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(26, 146);
             this.dataGridView1.Name = "dataGridView1";
@@ -146,21 +140,20 @@
             // 
             this.seatsBindingSource.DataSource = typeof(ConcertsDataBase.Seats);
             // 
-            // ticketIDDataGridViewTextBoxColumn
+            // Column1
             // 
-            this.ticketIDDataGridViewTextBoxColumn.DataPropertyName = "Ticket_ID";
-            this.ticketIDDataGridViewTextBoxColumn.HeaderText = "Ticket_ID";
-            this.ticketIDDataGridViewTextBoxColumn.Name = "ticketIDDataGridViewTextBoxColumn";
-            this.ticketIDDataGridViewTextBoxColumn.Visible = false;
+            this.Column1.DataPropertyName = "Ticket_Seat_ID";
+            this.Column1.DataSource = this.seatsBindingSource;
+            this.Column1.DisplayMember = "Seat_Number";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ValueMember = "Seat_ID";
             // 
-            // Column2
+            // ticketPriceDataGridViewTextBoxColumn
             // 
-            this.Column2.DataPropertyName = "Ticket_Seat_ID";
-            this.Column2.DataSource = this.seatsBindingSource;
-            this.Column2.DisplayMember = "Seat_Number";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ValueMember = "Seat_ID";
+            this.ticketPriceDataGridViewTextBoxColumn.DataPropertyName = "Ticket_Price";
+            this.ticketPriceDataGridViewTextBoxColumn.HeaderText = "Ціна";
+            this.ticketPriceDataGridViewTextBoxColumn.Name = "ticketPriceDataGridViewTextBoxColumn";
             // 
             // ticketStateIDDataGridViewTextBoxColumn
             // 
@@ -183,32 +176,12 @@
             this.ticketSeatIDDataGridViewTextBoxColumn.Name = "ticketSeatIDDataGridViewTextBoxColumn";
             this.ticketSeatIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // ticketPriceDataGridViewTextBoxColumn
+            // ticketIDDataGridViewTextBoxColumn
             // 
-            this.ticketPriceDataGridViewTextBoxColumn.DataPropertyName = "Ticket_Price";
-            this.ticketPriceDataGridViewTextBoxColumn.HeaderText = "Ціна";
-            this.ticketPriceDataGridViewTextBoxColumn.Name = "ticketPriceDataGridViewTextBoxColumn";
-            // 
-            // concertsDataGridViewTextBoxColumn
-            // 
-            this.concertsDataGridViewTextBoxColumn.DataPropertyName = "Concerts";
-            this.concertsDataGridViewTextBoxColumn.HeaderText = "Concerts";
-            this.concertsDataGridViewTextBoxColumn.Name = "concertsDataGridViewTextBoxColumn";
-            this.concertsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // seatsDataGridViewTextBoxColumn
-            // 
-            this.seatsDataGridViewTextBoxColumn.DataPropertyName = "Seats";
-            this.seatsDataGridViewTextBoxColumn.HeaderText = "Seats";
-            this.seatsDataGridViewTextBoxColumn.Name = "seatsDataGridViewTextBoxColumn";
-            this.seatsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ticketStatesDataGridViewTextBoxColumn
-            // 
-            this.ticketStatesDataGridViewTextBoxColumn.DataPropertyName = "Ticket_States";
-            this.ticketStatesDataGridViewTextBoxColumn.HeaderText = "Ticket_States";
-            this.ticketStatesDataGridViewTextBoxColumn.Name = "ticketStatesDataGridViewTextBoxColumn";
-            this.ticketStatesDataGridViewTextBoxColumn.Visible = false;
+            this.ticketIDDataGridViewTextBoxColumn.DataPropertyName = "Ticket_ID";
+            this.ticketIDDataGridViewTextBoxColumn.HeaderText = "Ticket_ID";
+            this.ticketIDDataGridViewTextBoxColumn.Name = "ticketIDDataGridViewTextBoxColumn";
+            this.ticketIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormTickets
             // 
@@ -244,15 +217,12 @@
         private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.TextBox textBoxPlace;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ticketIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.BindingSource seatsBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ticketPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketStateIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketConcertIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketSeatIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ticketPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn concertsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seatsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ticketStatesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ticketIDDataGridViewTextBoxColumn;
     }
 }

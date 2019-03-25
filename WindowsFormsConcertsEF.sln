@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsConcertsEF", "W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertsDataBase", "ConcertsDataBase\ConcertsDataBase.csproj", "{F64D7D1E-9163-4762-8A69-F236C26528DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSLogin", "DSLogin\DSLogin.csproj", "{38BDEA6D-D3C1-4756-AE36-56D804268A5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F64D7D1E-9163-4762-8A69-F236C26528DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38BDEA6D-D3C1-4756-AE36-56D804268A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38BDEA6D-D3C1-4756-AE36-56D804268A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38BDEA6D-D3C1-4756-AE36-56D804268A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38BDEA6D-D3C1-4756-AE36-56D804268A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

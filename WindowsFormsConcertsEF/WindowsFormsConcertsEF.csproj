@@ -86,6 +86,12 @@
     <Compile Include="FormArtists.Designer.cs">
       <DependentUpon>FormArtists.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormArtists.resx">
       <DependentUpon>FormArtists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTickets.resx">
       <DependentUpon>FormTickets.cs</DependentUpon>
@@ -153,6 +162,10 @@
     <ProjectReference Include="..\ConcertsDataBase\ConcertsDataBase.csproj">
       <Project>{f64d7d1e-9163-4762-8a69-f236c26528dd}</Project>
       <Name>ConcertsDataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSLogin\DSLogin.csproj">
+      <Project>{38bdea6d-d3c1-4756-ae36-56d804268a5c}</Project>
+      <Name>DSLogin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

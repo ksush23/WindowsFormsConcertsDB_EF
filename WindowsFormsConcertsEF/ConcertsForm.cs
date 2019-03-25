@@ -236,5 +236,10 @@ namespace WindowsFormsConcertsEF
             form.ShowDialog(this);
             form.Dispose();
         }
+
+        private void tabArtists_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

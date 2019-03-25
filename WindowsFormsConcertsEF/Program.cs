@@ -16,7 +16,7 @@ namespace WindowsFormsConcertsEF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConcertsForm());
+            Application.Run(new FormLogin());
         }
     }
 }
