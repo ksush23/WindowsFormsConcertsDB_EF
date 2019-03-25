@@ -74,10 +74,37 @@
     <Compile Include="ConcertsForm.Designer.cs">
       <DependentUpon>ConcertsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormArtistInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtistInfo.Designer.cs">
+      <DependentUpon>FormArtistInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArtists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtists.Designer.cs">
+      <DependentUpon>FormArtists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTickets.Designer.cs">
+      <DependentUpon>FormTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConcertsForm.resx">
       <DependentUpon>ConcertsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArtistInfo.resx">
+      <DependentUpon>FormArtistInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArtists.resx">
+      <DependentUpon>FormArtists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTickets.resx">
+      <DependentUpon>FormTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +118,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ConcertsDataBase.Artists.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Concerts.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.ConcertsEntities.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Places.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Seats.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Sectors.datasource" />

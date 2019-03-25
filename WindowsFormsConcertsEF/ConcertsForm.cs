@@ -50,6 +50,7 @@ namespace WindowsFormsConcertsEF
         private void buttonSaveArtists_Click(object sender, EventArgs e)
         {
             ctx.SaveChanges();
+
         }
 
         private void buttonDeleteArtists_Click(object sender, EventArgs e)
@@ -197,6 +198,43 @@ namespace WindowsFormsConcertsEF
                 MessageBox.Show("Помилка видалення місця");
                 throw;
             }
+        }
+
+        private void dataGridViewArtists_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var chE = ctx.ChangeTracker.Entries<Artists>().Where(a => a.State != EntityState.Unchanged).ToList();
+            if (chE.Count != 0)
+            {
+                MessageBox.Show("Необхідно зберегти зміни");
+            }
+            else
+            {
+                try
+                {
+                    Artists art = (Artists)dataGridViewArtists.CurrentRow.DataBoundItem;
+                    FormArtistInfo formSearch = new FormArtistInfo(art.Artist_ID, art.Artist_Name);
+                    formSearch.ShowDialog(this);
+                    formSearch.Dispose();
+                }
+                catch
+                {
+                    MessageBox.Show("Помилка переходу");
+                }
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            FormArtists form = new FormArtists();
+            form.ShowDialog(this);
+            form.Dispose();
+        }
+
+        private void buttonSearchTickets_Click(object sender, EventArgs e)
+        {
+            FormTickets form = new FormTickets();
+            form.ShowDialog(this);
+            form.Dispose();
         }
     }
 }
