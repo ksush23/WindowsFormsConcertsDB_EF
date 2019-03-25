@@ -95,7 +95,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormSignUp";
-            this.Text = "FormSignUp";
+            this.Text = "Реєстрація";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAuthorization)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

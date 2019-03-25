@@ -107,7 +107,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Увійти";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAuthorization)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
