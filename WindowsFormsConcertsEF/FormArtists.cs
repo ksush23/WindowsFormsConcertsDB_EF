@@ -14,7 +14,7 @@ namespace WindowsFormsConcertsEF
 {
     public partial class FormArtists : Form
     {
-        private ConcertsDataBase.ConcertsEntities concerts;
+        private ConcertsDataBase.ConcertsEntities1 concerts;
 
         private void findArtist()
         {
@@ -25,7 +25,7 @@ namespace WindowsFormsConcertsEF
             }
             else*/
             {
-                concerts = new ConcertsDataBase.ConcertsEntities();
+                concerts = new ConcertsDataBase.ConcertsEntities1();
 
                 var query = (from c in concerts.Artists
                              where c.Artist_Genre.Contains(comboBoxGenre.Text)

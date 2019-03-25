@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
-using DSLogin;
+using ConcertsDataBase;
 
 namespace WindowsFormsConcertsEF
 {
     public partial class FormLogin : Form
     {
-        private DSLogin.LoginEntities entities;
+        private ConcertsDataBase.ConcertsEntities1 concertsEntities;
         public FormLogin()
         {
             InitializeComponent();
@@ -22,12 +22,12 @@ namespace WindowsFormsConcertsEF
 
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            entities = new DSLogin.LoginEntities();
+            concertsEntities = new ConcertsDataBase.ConcertsEntities1();
 
-            var query = (from c in entities.Login
-                         where c.Логін.Contains(textBoxLogin.Text) && c.Пароль.Contains(textBoxPassword.Text)
-                         select c);
-            if (query.Count() == 0)
+            var query = (from c in concertsEntities.Authorization
+                         where c.Login == textBoxLogin.Text && c.Password == textBoxPassword.Text
+                         select c).Count();
+            if (query == 0)
                 MessageBox.Show("Неправильний логін і пароль!");
             else
             {
@@ -35,6 +35,13 @@ namespace WindowsFormsConcertsEF
                 form.ShowDialog(this);
                 form.Dispose();
             }
+        }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            FormSignUp form = new FormSignUp();
+            form.ShowDialog(this);
+            form.Dispose();
         }
     }
 }

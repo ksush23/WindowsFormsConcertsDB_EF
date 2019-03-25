@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F64D7D1E-9163-4762-8A69-F236C26528DD}</ProjectGuid>
+    <ProjectGuid>{21D876E2-0482-4EA8-9E6A-B0AB941285BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConcertsDataBase</RootNamespace>
-    <AssemblyName>ConcertsDataBase</AssemblyName>
+    <RootNamespace>DSAuthorization</RootNamespace>
+    <AssemblyName>DSAuthorization</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,7 +40,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -51,56 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artists.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Authorization.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
+    <Compile Include="AuthorizationInfo.cs">
+      <DependentUpon>ModelAuthorization.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="Concerts.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelConcerts.Context.cs">
+    <Compile Include="ModelAuthorization.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelConcerts.Context.tt</DependentUpon>
+      <DependentUpon>ModelAuthorization.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelConcerts.cs">
+    <Compile Include="ModelAuthorization.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
+      <DependentUpon>ModelAuthorization.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelConcerts.Designer.cs">
+    <Compile Include="ModelAuthorization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelConcerts.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Places.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
+      <DependentUpon>ModelAuthorization.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seats.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sectors.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tickets.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket_States.cs">
-      <DependentUpon>ModelConcerts.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="ModelConcerts.edmx">
+    <EntityDeploy Include="ModelAuthorization.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelConcerts.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelAuthorization.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelConcerts.edmx.diagram">
-      <DependentUpon>ModelConcerts.edmx</DependentUpon>
+    <None Include="ModelAuthorization.edmx.diagram">
+      <DependentUpon>ModelAuthorization.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -108,15 +86,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelConcerts.Context.tt">
+    <Content Include="ModelAuthorization.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelConcerts.edmx</DependentUpon>
-      <LastGenOutput>ModelConcerts.Context.cs</LastGenOutput>
+      <DependentUpon>ModelAuthorization.edmx</DependentUpon>
+      <LastGenOutput>ModelAuthorization.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelConcerts.tt">
+    <Content Include="ModelAuthorization.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelConcerts.edmx</DependentUpon>
-      <LastGenOutput>ModelConcerts.cs</LastGenOutput>
+      <DependentUpon>ModelAuthorization.edmx</DependentUpon>
+      <LastGenOutput>ModelAuthorization.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

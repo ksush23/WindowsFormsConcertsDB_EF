@@ -14,11 +14,11 @@ namespace WindowsFormsConcertsEF
 {
     public partial class ConcertsForm : Form
     {
-        private ConcertsDataBase.ConcertsEntities ctx;
+        private ConcertsDataBase.ConcertsEntities1 ctx;
         public ConcertsForm()
         {
             InitializeComponent();
-            ctx = new ConcertsDataBase.ConcertsEntities();
+            ctx = new ConcertsDataBase.ConcertsEntities1();
 
             ctx.Artists.Load();
             this.artistsBindingSource.DataSource = ctx.Artists.Local.ToBindingList();

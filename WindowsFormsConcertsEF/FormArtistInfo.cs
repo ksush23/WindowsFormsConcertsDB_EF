@@ -16,7 +16,7 @@ namespace WindowsFormsConcertsEF
     {
         private int id;
         private readonly string name;
-        private ConcertsDataBase.ConcertsEntities concerts;
+        private ConcertsDataBase.ConcertsEntities1 concerts;
 
         public FormArtistInfo(int _id, string _name)
         {
@@ -25,7 +25,7 @@ namespace WindowsFormsConcertsEF
             id = _id;
             name = _name;
 
-            concerts = new ConcertsDataBase.ConcertsEntities();
+            concerts = new ConcertsDataBase.ConcertsEntities1();
             Text = String.Concat(Text, " ", name);
             findArtistInfo();
         }
@@ -40,7 +40,7 @@ namespace WindowsFormsConcertsEF
             else
             {
                 concerts.Dispose();
-                concerts = new ConcertsDataBase.ConcertsEntities();
+                concerts = new ConcertsDataBase.ConcertsEntities1();
 
                 var query = (from c1 in concerts.Artists
                              join c2 in concerts.Concerts on c1.Artist_ID equals c2.Concert_Artist_ID

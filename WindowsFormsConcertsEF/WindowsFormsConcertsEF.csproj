@@ -92,6 +92,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSignUp.Designer.cs">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSignUp.resx">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTickets.resx">
       <DependentUpon>FormTickets.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +135,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ConcertsDataBase.Artists.datasource" />
+    <None Include="Properties\DataSources\ConcertsDataBase.Authorization.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Concerts.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.ConcertsEntities.datasource" />
     <None Include="Properties\DataSources\ConcertsDataBase.Places.datasource" />
@@ -162,10 +172,6 @@
     <ProjectReference Include="..\ConcertsDataBase\ConcertsDataBase.csproj">
       <Project>{f64d7d1e-9163-4762-8a69-f236c26528dd}</Project>
       <Name>ConcertsDataBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DSLogin\DSLogin.csproj">
-      <Project>{38bdea6d-d3c1-4756-ae36-56d804268a5c}</Project>
-      <Name>DSLogin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,13 @@
           <Property Name="Artist_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Artist_Genre" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Concerts">
           <Key>
             <PropertyRef Name="Concert_ID" />
@@ -46,16 +53,6 @@
           <Property Name="Sector_ID" Type="int" Nullable="false" />
           <Property Name="Sector_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Sector_Place_ID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Ticket_States">
           <Key>
@@ -160,11 +157,11 @@
         </Association>
         <EntityContainer Name="Хранилище ConcertsModelContainer">
           <EntitySet Name="Artists" EntityType="Self.Artists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Concerts" EntityType="Self.Concerts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seats" EntityType="Self.Seats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sectors" EntityType="Self.Sectors" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket_States" EntityType="Self.Ticket_States" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Concert_Artist" Association="Self.FK_Concert_Artist">
@@ -210,6 +207,13 @@
           <Property Name="Artist_Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Concerts" Relationship="Self.FK_Concert_Artist" FromRole="Artists" ToRole="Concerts" />
         </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Concerts">
           <Key>
             <PropertyRef Name="Concert_ID" />
@@ -252,16 +256,6 @@
           <Property Name="Sector_Place_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Places" Relationship="Self.FK_Sector_Place" FromRole="Sectors" ToRole="Places" />
           <NavigationProperty Name="Seats" Relationship="Self.FK_Seat_Sector1" FromRole="Sectors" ToRole="Seats" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Ticket_States">
           <Key>
@@ -368,13 +362,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ConcertsEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ConcertsEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Artists" EntityType="Self.Artists" />
+          <EntitySet Name="Authorization" EntityType="Self.Authorization" />
           <EntitySet Name="Concerts" EntityType="Self.Concerts" />
           <EntitySet Name="Places" EntityType="Self.Places" />
           <EntitySet Name="Seats" EntityType="Self.Seats" />
           <EntitySet Name="Sectors" EntityType="Self.Sectors" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Ticket_States" EntityType="Self.Ticket_States" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" />
           <AssociationSet Name="FK_Concert_Artist" Association="Self.FK_Concert_Artist">
@@ -411,13 +405,21 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ConcertsModelContainer" CdmEntityContainer="ConcertsEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ConcertsModelContainer" CdmEntityContainer="ConcertsEntities1">
           <EntitySetMapping Name="Artists">
             <EntityTypeMapping TypeName="ConcertsModel.Artists">
               <MappingFragment StoreEntitySet="Artists">
                 <ScalarProperty Name="Artist_ID" ColumnName="Artist_ID" />
                 <ScalarProperty Name="Artist_Name" ColumnName="Artist_Name" />
                 <ScalarProperty Name="Artist_Genre" ColumnName="Artist_Genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authorization">
+            <EntityTypeMapping TypeName="ConcertsModel.Authorization">
+              <MappingFragment StoreEntitySet="Authorization">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -456,17 +458,6 @@
                 <ScalarProperty Name="Sector_ID" ColumnName="Sector_ID" />
                 <ScalarProperty Name="Sector_Name" ColumnName="Sector_Name" />
                 <ScalarProperty Name="Sector_Place_ID" ColumnName="Sector_Place_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ConcertsModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

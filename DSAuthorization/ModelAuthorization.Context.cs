@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConcertsDataBase
+namespace DSAuthorization
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ConcertsEntities : DbContext
+    public partial class LoginEntities2 : DbContext
     {
-        public ConcertsEntities()
-            : base("name=ConcertsEntities")
+        public LoginEntities2()
+            : base("name=LoginEntities2")
         {
         }
     
@@ -25,13 +25,6 @@ namespace ConcertsDataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Artists> Artists { get; set; }
-        public virtual DbSet<Concerts> Concerts { get; set; }
-        public virtual DbSet<Places> Places { get; set; }
-        public virtual DbSet<Seats> Seats { get; set; }
-        public virtual DbSet<Sectors> Sectors { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Ticket_States> Ticket_States { get; set; }
-        public virtual DbSet<Tickets> Tickets { get; set; }
+        public virtual DbSet<AuthorizationInfo> AuthorizationInfo { get; set; }
     }
 }

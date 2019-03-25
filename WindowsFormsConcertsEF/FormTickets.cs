@@ -14,7 +14,7 @@ namespace WindowsFormsConcertsEF
 {
     public partial class FormTickets : Form
     {
-        private ConcertsDataBase.ConcertsEntities concerts;
+        private ConcertsDataBase.ConcertsEntities1 concerts;
 
         public FormTickets()
         {
@@ -30,7 +30,7 @@ namespace WindowsFormsConcertsEF
             }
             else*/
             {
-                concerts = new ConcertsDataBase.ConcertsEntities();
+                concerts = new ConcertsDataBase.ConcertsEntities1();
 
                 var query = (from c1 in concerts.Artists
                              join c2 in concerts.Concerts on c1.Artist_ID equals c2.Concert_Artist_ID
